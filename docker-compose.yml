@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db 
+      DB_NAME: flaskdb
+      DB_USER: postgres
+      DB_PASS: postgres
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: flaskdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: 
+      - "5432:5432"
