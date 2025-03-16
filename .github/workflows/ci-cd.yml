@@ -57,5 +57,5 @@ jobs:
 
       - name: Build & Push Docker Image
         run: |
-          docker build -t ghcr.io/${{ github.actor.lowercase }}/flask-app:latest .
+          docker build -t ghcr.io/jeffreyjing/flask-k8s-pipeline:latest .
           docker push ghcr.io/${{ github.repository }}/flask-app:latest
